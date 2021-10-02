@@ -38,7 +38,14 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //add dummy column 
+    protected $appends = ['avatar'];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //adding gravatar in laravel for image url
+    public function getAvatarAttribute(){
+        return "https://www.gravatar.com/avatar/". md5(strtolower(trim($this->email)));
+    }
 }
