@@ -55,7 +55,7 @@ class User extends Authenticatable
     //relationship with posts table to the user table
    public function posts()
    {
-       return $this->hasMany(Post::class,'userid');
+       return $this->hasMany(Post::class,'user_id');
    }
 
 }

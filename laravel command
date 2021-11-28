@@ -1,0 +1,12 @@
+//creating new table in laravel
+php artisan make:migration create_flights_table
+
+//creating seeder file in laravel
+
+php artisan make:seeder UserSeeder
+
+//to run seeder class
+
+php artisan db:seeder --class=UserSeeder
+
+

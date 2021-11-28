@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDeviceNameToPosts extends Migration
+class AddMultipleColumnsToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,9 @@ class AddDeviceNameToPosts extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('device_name');
+            $table->text('mobile_number')->after('remember_token')->nullable();
+            $table->text('device_name')->after('mobile_number')->nullable();
+            $table->text('avatar')->after('device_name')->nullable();
         });
     }
 
@@ -26,7 +28,10 @@ class AddDeviceNameToPosts extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('mobile_number');
             $table->dropColumn('device_name');
+            $table->dropColumn('avatar');
+    
         });
     }
 }

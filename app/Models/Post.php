@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasApiTokens,HasFactory;
     protected $fillable = [
-        'title', 'content','image','userid'
+        'title', 'content','image','user_id'
     ];
 
     public function user()

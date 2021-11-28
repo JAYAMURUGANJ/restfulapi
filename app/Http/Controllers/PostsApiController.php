@@ -55,7 +55,7 @@ class PostsApiController extends Controller
             'title' => 'required',
             'content' => 'required',
             'image' => 'required',
-            'userid' => 'required',
+            'user_id' => 'required',
         ]);
 
         if($request->hasfile('image')){
@@ -73,7 +73,7 @@ class PostsApiController extends Controller
             'title' => request('title'),
             'content' => request('content'),
             'image' => $photoUrl,
-            'userid' => request('userid'),
+            'user_id' => request('user_id'),
         ]);
     }
 
