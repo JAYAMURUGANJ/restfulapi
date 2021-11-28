@@ -45,8 +45,8 @@ Route::group(['middleware' =>['auth:sanctum']], function () {
     Route::get('/posts', [PostsApiController::class, 'pagniatedList']);
 
     //search posts with title or content and id
-    Route::get('/posts/search/{Title-or-Content}', [PostsApiController::class, 'searchByTitle']);
-    Route::get('/posts/search/{id}', [PostsApiController::class, 'searchById']);
+    Route::get('/posts/search/{title}', [PostsApiController::class, 'searchByTitle']);
+    Route::get('/posts/{id}', [PostsApiController::class, 'searchById']);
    
 
     //basic CRUD operations

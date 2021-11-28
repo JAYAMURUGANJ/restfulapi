@@ -85,7 +85,7 @@ class PostsApiController extends Controller
      */
     public function searchById($id)
     {
-        return Post::find($id);
+        return Post::query()->where('id',$id)->get();
     }
 
     /**
